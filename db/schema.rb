@@ -13,9 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20150712013854) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "points", force: true do |t|
     t.date     "date_from"
     t.date     "date_to"
@@ -25,8 +22,8 @@ ActiveRecord::Schema.define(version: 20150712013854) do
     t.datetime "updated_at"
   end
 
-  add_index "points", ["route_id"], name: "index_points_on_route_id", using: :btree
-  add_index "points", ["town_id"], name: "index_points_on_town_id", using: :btree
+  add_index "points", ["route_id"], name: "index_points_on_route_id"
+  add_index "points", ["town_id"], name: "index_points_on_town_id"
 
   create_table "routes", force: true do |t|
     t.integer  "user_id"
@@ -34,7 +31,7 @@ ActiveRecord::Schema.define(version: 20150712013854) do
     t.datetime "updated_at"
   end
 
-  add_index "routes", ["user_id"], name: "index_routes_on_user_id", using: :btree
+  add_index "routes", ["user_id"], name: "index_routes_on_user_id"
 
   create_table "towns", force: true do |t|
     t.string   "name"
@@ -45,7 +42,7 @@ ActiveRecord::Schema.define(version: 20150712013854) do
 
   create_table "users", force: true do |t|
     t.string   "name"
-    t.integer  "age"
+    t.date     "age"
     t.string   "gender"
     t.string   "avatar"
     t.string   "token"
