@@ -1,0 +1,29 @@
+<h1>Listing points</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Route</th>
+      <th>Town</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @points.each do |point| %>
+      <tr>
+        <td><%= point.date %></td>
+        <td><%= point.route.user.name %></td>
+        <td><%= point.town.name %></td>
+        <td><%= link_to 'Show', user_route_point_path(params[:user_id],params[:route_id],point) %></td>
+        <td><%= link_to 'Edit', edit_user_route_point_path(params[:user_id],params[:route_id],point) %></td>
+        <td><%= link_to 'Destroy', user_route_path(params[:user_id], point), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Point', new_user_route_point_path %>

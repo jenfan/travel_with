@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @route.user.name %>
+  <% @route.points.each do |point| %>
+  	<%= point %>
+  	<% end %>
+</p>
+<p>
+
+</p>
+
+<%= link_to 'Edit', edit_user_route_path(params[:user_id],@route) %> |
+<%= link_to 'Back', user_routes_path %>

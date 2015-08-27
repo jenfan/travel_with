@@ -1,0 +1,29 @@
+<%= form_for(@point, url: @point.new_record? ? user_route_points_path(params[:user_id], params[:route_id] ) : user_route_point_path(params[:user_id], params[:route_id]) ) do |f| %>
+  <% if @point.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@point.errors.count, "error") %> prohibited this point from being saved:</h2>
+
+      <ul>
+      <% @point.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :date %><br>
+    <%= f.date_select :date %>
+  </div>
+  <div class="field">
+    <%= f.label :route_id %><br>
+    <%= f.text_field :route_id %>
+  </div>
+  <div class="field">
+    <%= f.label :town_id %><br>
+    <%= f.text_field :town_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

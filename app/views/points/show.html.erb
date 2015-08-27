@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @point.date %>
+</p>
+
+<p>
+  <strong>Route:</strong>
+  <%= @point.route %>
+</p>
+
+<p>
+  <strong>Town:</strong>
+  <%= @point.town.name %>
+</p>
+
+<%= link_to 'Edit', edit_user_route_point_path(params[:user_id],params[:route_id],@point) %> |
+<%= link_to 'Back', user_route_points_path(params[:user_id],params[:route_id]) %>
