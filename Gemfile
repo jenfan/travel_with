@@ -11,6 +11,7 @@ gem 'capistrano-ext'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.9'
 gem 'fb_graph'
+gem 'net-ssh', '!= 2.10.0'
 gem 'pg', "0.18.2", group: :production
 gem "cf-autoconfig", "~> 0.2.1"
 gem 'rails_12factor', group: :production

@@ -70,7 +70,7 @@ GEM
       net-ssh (>= 2.6.5)
     net-sftp (2.1.2)
       net-ssh (>= 2.6.5)
-    net-ssh (2.10.0)
+    net-ssh (2.9.2)
     net-ssh-gateway (1.2.0)
       net-ssh (>= 2.6.5)
     pg (0.18.2)
@@ -136,6 +136,7 @@ DEPENDENCIES
   capistrano-ext
   cf-autoconfig (~> 0.2.1)
   fb_graph
+  net-ssh (!= 2.10.0)
   pg (= 0.18.2)
   rails (= 4.1.9)
   rails_12factor
